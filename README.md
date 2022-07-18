@@ -1,6 +1,6 @@
 # gecho
 
-This service will echo back the the incoming request to you. Often while working on services that are hidden behind a proxy, or multiple proxies, a load balancer, an API gateway or however your infrastructure is built, you might want to know how the end request would look like. I.e. what headers has been removed, manipulated, or added.
+This HTTP service will echo back the the incoming request to you. Often while working on services that are hidden behind a proxy, or multiple proxies, a load balancer, an API gateway or however your infrastructure is built, you might want to know how the end request would look like. I.e. what headers has been removed, manipulated, or added.
 
 ## Examples by using HTTPIE
 
@@ -89,6 +89,12 @@ URI: /echo
 =========================
 Accept: */*
 User-Agent: curl/7.79.1
+```
+
+## Kubernetes
+I have added an example manifest file `gecho.k8s.yaml`.
+```bash
+kubectl apply -f gecho.k8s.yaml
 ```
 
 ## Build
