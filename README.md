@@ -75,7 +75,7 @@ HTTP_PORT=1337 gecho
 ```
 
 Environment variables
-`HTTP_PORT` default `8080`
+* `HTTP_PORT` default `8080`
 
 ## Docker
 
