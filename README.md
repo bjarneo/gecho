@@ -2,7 +2,7 @@
 
 This service will echo back the the incoming request to you. Often while working on services that are hidden behind a proxy, or multiple proxies, a load balancer, an API gateway or however your infrastructure is built, you might want to know how the end request would look like. I.e. what headers has been removed, manipulated, or added.
 
-## Example by using HTTPIE
+## Examples by using HTTPIE
 
 Post JSON
 
@@ -63,12 +63,32 @@ This is the file content
 ## Usage
 
 ```bash
-dotenvjson -h
-Usage of dotenvjson:
-  -o  string  Save the output to file. -o=file.json
-  -p  bool    Pretty print the output. (default false)
-  -pt bool    Print to terminal. (default true)
-  -y  bool    Transform it to YAML
+HTTP_PORT=1337 gecho
+```
+
+Environment variables
+`HTTP_PORT` default `8080`
+
+## Docker
+
+The image is available at `bjarneo/gecho:latest`
+
+```bash
+# This example we override the HTTP_PORT to port 1337 as a show case
+docker run -it -p 8080:1337 -e HTTP_PORT=1337 --rm --name gecho bjarneo/gecho:latest
+
+# Now test it with curl
+curl localhost:8080/echo
+=========================
+|--- REQUEST DETAILS ---|
+=========================
+URI: /echo
+
+=========================
+|--- REQUEST HEADERS ---|
+=========================
+Accept: */*
+User-Agent: curl/7.79.1
 ```
 
 ## Build

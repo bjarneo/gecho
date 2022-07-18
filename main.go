@@ -12,7 +12,7 @@ import (
 
 // Fetch the port from env, if not set, return a default port
 func port() string {
-	port := os.Getenv("PORT")
+	port := os.Getenv("HTTP_PORT")
 
 	if port != "" {
 		return port
