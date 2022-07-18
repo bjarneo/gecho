@@ -71,9 +71,10 @@ Environment variables
 
 ## Docker
 
-The image is available at `bjarneo/gecho:latest`
+The image is available at `bjarneo/gecho:latest`. `docker pull bjarneo/gecho:latest`
 
 ```bash
+
 # This example we override the HTTP_PORT to port 1337 as a show case
 docker run -it -p 8080:1337 -e HTTP_PORT=1337 --rm --name gecho bjarneo/gecho:latest
 
