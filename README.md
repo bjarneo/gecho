@@ -110,6 +110,10 @@ go build -o bin/gecho
 
 Have a look at the releases page for binaries.
 
+## Features?
+
+Please create an issue
+
 ## License
 
 See [LICENSE](LICENSE)
