@@ -37,6 +37,12 @@ func sortKeyHeaders(headers http.Header) []string {
 // The echo endpoint
 func echo(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(w, "=========================\n")
+	fmt.Fprintf(w, "|--- REQUEST DETAILS ---|\n")
+	fmt.Fprintf(w, "=========================\n")
+
+	fmt.Fprintf(w, "URI: %s", req.URL.RequestURI())
+
+	fmt.Fprintf(w, "\n\n=========================\n")
 	fmt.Fprintf(w, "|--- REQUEST HEADERS ---|\n")
 	fmt.Fprintf(w, "=========================\n")
 
