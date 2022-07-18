@@ -15,7 +15,9 @@ Content-Type: text/plain; charset=utf-8
 Date: Mon, 18 Jul 2022 07:59:33 GMT
 Vary: Accept-Encoding
 
-#### REQUEST HEADERS ####
+=========================
+|--- REQUEST HEADERS ---|
+=========================
 Connection: keep-alive
 Content-Type: application/json
 X-My-Header: gecho
@@ -25,7 +27,9 @@ Accept: application/json, */*;q=0.5
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 
 
-#### REQUEST BODY ####
+=========================
+|---- REQUEST  BODY ----|
+=========================
 {"name": "Something", "hobby": "something else"}
 ```
 
@@ -40,7 +44,9 @@ Content-Type: text/plain; charset=utf-8
 Date: Mon, 18 Jul 2022 08:00:57 GMT
 Vary: Accept-Encoding
 
-#### REQUEST HEADERS ####
+=========================
+|--- REQUEST HEADERS ---|
+=========================
 X-My-Header: gecho
 User-Agent: HTTPie/2.4.0
 Connection: keep-alive
@@ -50,7 +56,9 @@ Accept: */*
 Content-Type: multipart/form-data; boundary=d2a6a71154154fde9698582d2d8b36a8
 
 
-#### REQUEST BODY ####
+=========================
+|---- REQUEST  BODY ----|
+=========================
 --d2a6a71154154fde9698582d2d8b36a8
 Content-Disposition: form-data; name="file"; filename="test.txt"
 Content-Type: text/plain
