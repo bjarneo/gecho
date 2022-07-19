@@ -49,17 +49,15 @@ spec:
             timeoutSeconds: 60
           securityContext:
             privileged: false
-            readOnlyRootFilesystem: false
+            readOnlyRootFilesystem: true
             runAsGroup: 3000
             runAsNonRoot: true
             runAsUser: 1000
-      dnsPolicy: ClusterFirst
       restartPolicy: Always
       securityContext:
         fsGroup: 2000
         fsGroupChangePolicy: Always
         runAsNonRoot: true
-      setHostnameAsFQDN: false
 ---
 apiVersion: v1
 kind: Service
