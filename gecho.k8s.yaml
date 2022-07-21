@@ -53,6 +53,7 @@ spec:
             runAsGroup: 3000
             runAsNonRoot: true
             runAsUser: 1000
+            allowPrivilegeEscalation: false
           resources:
             requests:
               memory: "64Mi"
