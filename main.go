@@ -79,10 +79,13 @@ func healthz(w http.ResponseWriter, req *http.Request) {
 func main() {
 	r := mux.NewRouter()
 
-	r.Handle("/healthz", handlers.LoggingHandler(os.Stdout, http.HandlerFunc(healthz)))
+	// Define the middlewares
+	r.Use(LoggingMiddleware)
+
+	r.Handle("/healthz", http.HandlerFunc(healthz))
 
 	// Handle all routes, no matter what
-	r.PathPrefix("/").Handler(handlers.LoggingHandler(os.Stdout, http.HandlerFunc(echo)))
+	r.PathPrefix("/").Handler(http.HandlerFunc(echo))
 
 	http.ListenAndServe(":"+port(), handlers.CompressHandler(r))
 }
