@@ -1,13 +1,16 @@
 # gecho
 
-This HTTP service will echo back the the incoming request to you. Often while working on services that are hidden behind a proxy, or multiple proxies, a load balancer, an API gateway or however your infrastructure is built, you might want to know how the end request would look like. I.e. what headers has been removed, manipulated, or added.
+This HTTP service will echo back the incoming request to you. Often while working on services that are hidden behind a proxy, or multiple proxies, a load balancer, an API gateway or however your infrastructure is built, you might want to know how the end request would look like. I.e. what headers has been removed, manipulated, or added.
 
 ## Examples by using HTTPIE
 
 Post JSON
 
 ```bash
-http localhost:1337/echo name="Something" hobby="something else" X-My-Header:gecho --auth username:password
+# Post to whatever route you wish. I will be using echo.
+http localhost:1337/echo name="Something" hobby="something else"
+
+X-My-Header:gecho --auth username:password
 HTTP/1.1 200 OK
 Content-Encoding: gzip
 Content-Length: 250
@@ -79,7 +82,8 @@ Environment variables
 
 ## Docker
 
-The image is available at `bjarneo/gecho:latest`. `docker pull bjarneo/gecho:latest`
+The image is available at `bjarneo/gecho:latest`.
+`docker pull bjarneo/gecho:latest`
 
 ```bash
 
