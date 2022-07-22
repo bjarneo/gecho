@@ -8,6 +8,7 @@ import (
 	"sort"
 
 	"github.com/gorilla/handlers"
+	"github.com/gorilla/mux"
 )
 
 // Fetch the port from env, if not set, return a default port
@@ -76,11 +77,12 @@ func healthz(w http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	r := http.NewServeMux()
-
-	r.Handle("/echo", handlers.LoggingHandler(os.Stdout, http.HandlerFunc(echo)))
+	r := mux.NewRouter()
 
 	r.Handle("/healthz", handlers.LoggingHandler(os.Stdout, http.HandlerFunc(healthz)))
+
+	// Handle all routes, no matter what
+	r.PathPrefix("/").Handler(handlers.LoggingHandler(os.Stdout, http.HandlerFunc(echo)))
 
 	http.ListenAndServe(":"+port(), handlers.CompressHandler(r))
 }
