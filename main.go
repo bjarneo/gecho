@@ -12,6 +12,7 @@ func main() {
 
 	// Define the middlewares
 	r.Use(LoggingMiddleware)
+	r.Use(handlers.CORS(handlers.AllowedOrigins([]string{"*"})))
 
 	r.Handle("/healthz", http.HandlerFunc(Healthz))
 
