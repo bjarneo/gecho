@@ -84,6 +84,33 @@ This is the file content
 --d2a6a71154154fde9698582d2d8b36a8--
 ```
 
+Example by using fetch from the frontend
+
+```js
+const req = await fetch("http://localhost:1337/echo?abc=def");
+
+const text = await req.text();
+
+console.log(text)
+/*
+=========================
+|--- REQUEST DETAILS ---|
+=========================
+URI: /echo?abc=def
+
+=========================
+|--- REQUEST HEADERS ---|
+=========================
+Accept-Language: nb-NO,nb;q=0.9,no;q=0.8,nn;q=0.7,en-US;q=0.6,en;q=0.5,da;q=0.4,sv;q=0.3
+Cache-Control: no-cache
+Connection: keep-alive
+Dnt: 1
+Pragma: no-cache
+Sec-Ch-Ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+User-Agent: Woohoo
+*/
+```
+
 ## Usage
 
 ```bash
