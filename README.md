@@ -2,6 +2,19 @@
 
 This HTTP service will echo back the incoming request to you. Often while working on services that are hidden behind a proxy, or multiple proxies, a load balancer, an API gateway or however your infrastructure is built, you might want to know how the end request would look like. I.e. what headers has been removed, manipulated, or added.
 
+## Use cases
+
+Without adding too much debugging to your application, you can use this service as a drop in replacement for the app you are debugging.
+
+* It has wildcard support for routes, so you can just change your application host with the host of this service
+* What is the end request headers after going through gateways/proxies/load balancers
+* Check the form data request body
+* Check JSON data request body
+* How about the file you are trying to upload?
+* Check the AUTH request headers
+
+See some examples:
+
 ## Examples by using HTTPIE
 
 Post JSON
