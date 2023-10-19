@@ -7,10 +7,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
+
+
 func main() {
 	r := mux.NewRouter()
 
 	// Define the middlewares
+	r.Use(MaxFileSize)
 	r.Use(LoggingMiddleware)
 	r.Use(handlers.CORS(handlers.AllowedOrigins([]string{"*"})))
 
